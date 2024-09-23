@@ -1,0 +1,36 @@
+{
+  "sitetitle": "Blockpress.me",
+  "tagline":"The API driven disembodied CMS",
+	"palette": "pistachiocream",
+  "theme": "metaverse",
+
+	"themeoptions": {
+		"banner_image": "",
+		"site_image": ""
+	},
+
+	"modules": ["static"],
+
+	"steem_options": {
+		"": ""
+	},
+
+	"firstpage": {"type": "static", "args": ["default/welcome_to_blockpress.html"]},
+
+	"menu": [
+    {"label": "Home", "type": "static", "args": "default/welcome_to_blockpress.html"}
+  ],
+
+	"socialmenu": {
+		"github": "https://github.com/blockpress/blockpress.me",
+		"linkedin": "",
+		"twitter": "",
+		"facebook": "",
+		"gplus": "",
+		"stackoverflow": "",
+		"link_url": "https://blockpress.me",
+		"email": ""
+	},
+
+	"dateformat": {"locale": "en-US", "options":{ "weekday": "long", "year": "numeric", "month": "long", "day": "numeric" }}
+}

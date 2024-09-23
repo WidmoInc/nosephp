@@ -1,0 +1,44 @@
+{
+  "sitetitle": "Agent M",
+  "tagline":"You can't spell KAZOO without AZO!",
+	"palette": "chocberry",
+  "theme": "fluxstate",
+
+	"themeoptions": {
+		"banner_image": "",
+		"site_image": ""
+	},
+
+	"modules": ["html","chaoshex","enigmagick"],
+
+	"firstpage": {"type": "html", "args": ["m.html"]},
+
+	"menu": [
+    {"label": "Agent M", "type": "html", "args": ["m.html"]},
+    {"label": "ChaosHex", "type": "chaoshex", "args": [""]},
+    {"label": "About ChaosHex", "type": "html", "args": ["chaoshex.html"]},
+    {"label": "EnigMagick", "type": "enigmagick", "args": [""]},
+    {"label": "About EnigMagick", "type": "html", "args": ["enigmagick.html"]},
+    {"label": "Magick and Technology", "type": "html", "args": ["magictech.html"]}
+  ],
+
+	"socialmenu": {
+		"github": "https://github.com/toniwidmo/",
+		"linkedin": "",
+		"twitter": "",
+		"facebook": "https://www.facebook.com/toniwidmo23/",
+		"reddit": "",
+		"gplus": "",
+		"stackoverflow": "",
+		"link_url": "https://computers.faith/~kz69",
+		"email": "",
+		"fediverse": "@toni@blahaj.zone"
+	},
+	
+	"data_sources": {
+		"enigmagick": ["enigmagick_api", "https://computers.faith/enigmagick/rest/"],
+		"blahaj": ["rss", "https://blahaj.zone/@toni.rss"]
+	},
+
+	"dateformat": {"locale": "en-US", "options":{ "weekday": "long", "year": "numeric", "month": "long", "day": "numeric" }}
+}
