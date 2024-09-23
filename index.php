@@ -37,7 +37,27 @@
 	</head>
 
 	<body>
-		<img src="content/default/BP-logo-196px.png" alt="Loading..." class="BPloading"></img>
-		<h1 class="BPloading">Please wait while computer.faith loads your content.</h1>
+	<?php
+	$content = "PHP Generated Preview Goes Here...";
+	
+	$json = file_get_contents("./local_config.json");
+	//var_dump($json);
+	$config = json_decode($json);
+	//var_dump($config);
+	$page = $_GET['p'];
+
+	if(is_null($page)) {
+		$page = $config->firstpage->type.'/'.implode("/",$config->firstpage->args);
+	}
+	//var_dump($page);
+	$module = strtok($page, '/');
+	//var_dump($module);
+	$args = substr($page, strpos($page, "/") + 1);
+	//var_dump($args);
+
+	require_once(__DIR__.'/module/'.$module.'/preview.php');
+?>
+
+		<?=$content?>
 	</body>
 </html>
