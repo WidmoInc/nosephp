@@ -1,36 +1,35 @@
 {
-  "sitetitle": "Agent M",
-  "tagline":"You can't spell KAZOO without AZO!",
-	"palette": "chocberry",
-  "theme": "fluxstate",
+  "sitetitle": "NosePHP",
+  "tagline":"Get a Head with NosePHP!",
+	"palette": "pistachiocream",
+  "theme": "metaverse",
 
 	"themeoptions": {
 		"banner_image": "",
 		"site_image": ""
 	},
 
-	"modules": ["html","chaoshex","enigmagick"],
+	"modules": ["html","markdown","text","chaoshex","enigmagick"],
 
-	"firstpage": {"type": "html", "args": ["m.html"]},
+	"firstpage": {"type": "html", "args": ["nosephp.html"]},
 
 	"menu": [
-    {"label": "Agent M", "type": "html", "args": ["m.html"]},
+    {"label": "NosePHP", "type": "html", "args": ["nosephp.html"]},
+    {"label": "Markdown", "type": "markdown", "args": ["../README.md"]},
+    {"label": "Text", "type": "text", "args": ["../README.md"]},
     {"label": "ChaosHex", "type": "chaoshex", "args": [""]},
-    {"label": "About ChaosHex", "type": "html", "args": ["chaoshex.html"]},
-    {"label": "EnigMagick", "type": "enigmagick", "args": [""]},
-    {"label": "About EnigMagick", "type": "html", "args": ["enigmagick.html"]},
-    {"label": "Magick and Technology", "type": "html", "args": ["magictech.html"]}
+    {"label": "EnigMagick", "type": "enigmagick", "args": [""]}
   ],
 
 	"socialmenu": {
 		"github": "https://github.com/toniwidmo/",
 		"linkedin": "",
 		"twitter": "",
-		"facebook": "https://www.facebook.com/toniwidmo23/",
+		"facebook": "",
 		"reddit": "",
 		"gplus": "",
 		"stackoverflow": "",
-		"link_url": "https://computers.faith/~kz69",
+		"link_url": "",
 		"email": "",
 		"fediverse": "@toni@blahaj.zone"
 	},
