@@ -15,8 +15,8 @@
 
 	"menu": [
     {"label": "NosePHP", "type": "html", "args": ["nosephp.html"]},
-    {"label": "Markdown", "type": "markdown", "args": ["../README.md"]},
-    {"label": "Text", "type": "text", "args": ["../README.md"]},
+    {"label": "Markdown", "type": "markdown", "args": ["markdown.md"]},
+    {"label": "Text", "type": "text", "args": ["markdown.md"]},
     {"label": "ChaosHex", "type": "chaoshex", "args": [""]},
     {"label": "EnigMagick", "type": "enigmagick", "args": [""]}
   ],
