@@ -1,8 +1,8 @@
 {
   "sitetitle": "NosePHP",
   "tagline":"Get a Head with NosePHP!",
-	"palette": "pistachiocream",
-  "theme": "metaverse",
+	"palette": "chocberry",
+  "theme": "trollfell",
 
 	"themeoptions": {
 		"banner_image": "",
@@ -35,7 +35,7 @@
 	},
 	
 	"data_sources": {
-		"enigmagick": ["enigmagick_api", "https://computers.faith/enigmagick/rest/"],
+		"enigmagick": ["enigmagick_api", "https://enigmagick.net/rest/"],
 		"blahaj": ["rss", "https://blahaj.zone/@toni.rss"]
 	},
 
