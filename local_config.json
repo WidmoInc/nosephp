@@ -1,25 +1,26 @@
 {
-  "sitetitle": "NosePHP",
-  "tagline":"Get a Head with NosePHP!",
-	"palette": "chocberry",
-  "theme": "trollfell",
+	"sitetitle": "NosePHP",
+	"tagline":"Get a Head with NosePHP!",
+	"palette": "cherrypie",
+	"theme": "metaverse",
 
 	"themeoptions": {
 		"banner_image": "",
 		"site_image": ""
 	},
 
-	"modules": ["html","markdown","text","chaoshex","enigmagick"],
+	"modules": ["html","markdown","text","wordpress","chaoshex","enigmagick"],
 
 	"firstpage": {"type": "html", "args": ["nosephp.html"]},
 
 	"menu": [
-    {"label": "NosePHP", "type": "html", "args": ["nosephp.html"]},
-    {"label": "Markdown", "type": "markdown", "args": ["markdown.md"]},
-    {"label": "Text", "type": "text", "args": ["markdown.md"]},
-    {"label": "ChaosHex", "type": "chaoshex", "args": [""]},
-    {"label": "EnigMagick", "type": "enigmagick", "args": [""]}
-  ],
+		{"label": "NosePHP", "type": "html", "args": ["nosephp.html"]},
+		{"label": "Markdown", "type": "markdown", "args": ["markdown.md"]},
+		{"label": "Text", "type": "text", "args": ["markdown.md"]},
+		{"label": "WordPress", "type": "wordpress", "args": {"show":"posts", "tag":""}},
+		{"label": "ChaosHex", "type": "chaoshex", "args": [""]},
+		{"label": "EnigMagick", "type": "enigmagick", "args": [""]}
+	],
 
 	"socialmenu": {
 		"github": "https://github.com/toniwidmo/",
@@ -33,10 +34,26 @@
 		"email": "",
 		"fediverse": "@toni@blahaj.zone"
 	},
-	
+
+	"module_settings": {
+		"enigmagick": {
+			"api": "https://enigmagick.net/rest/"
+		},
+		"chaoshex": {
+			"enigmagick_api": "https://enigmagick.net/rest/"
+		},
+		"wordpress": {
+			"api": "https://public-api.wordpress.com/wp/v2/sites/nosephp.wordpress.com/",
+			"show_tags": true,
+			"show_category": false,
+			"page_size": 20
+		}
+	},
+
 	"data_sources": {
 		"enigmagick": ["enigmagick_api", "https://enigmagick.net/rest/"],
-		"blahaj": ["rss", "https://blahaj.zone/@toni.rss"]
+		"blahaj": ["rss", "https://blahaj.zone/@toni.rss"],
+		"wordpress": ["nosephp_wordpress", "https://public-api.wordpress.com/wp/v2/sites/nosephp.wordpress.com/"]
 	},
 
 	"dateformat": {"locale": "en-US", "options":{ "weekday": "long", "year": "numeric", "month": "long", "day": "numeric" }}
