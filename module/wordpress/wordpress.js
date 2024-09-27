@@ -255,7 +255,7 @@ function initWordPress() {
 
             loadWordPressTemplates();
             //getWordPressUsers();
-            getWordPressTags();
+            //getWordPressTags();
             //getWordPressCategories();
         }
     }
