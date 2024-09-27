@@ -23,16 +23,29 @@ function enigmagick_load(args) {
 	var content = enigmagick_template;
 
 	enigmagick_display(content);
-	if(typeof config.data_sources == "object") {
-		//console.log(config.data_sources);
-		//console.log(config.data_sources.enigmagick);
-		//console.log(typeof config.data_sources.enigmagick);
-		//console.log(config.data_sources.enigmagick[0]);
-		if(typeof config.data_sources.enigmagick == "object" && config.data_sources.enigmagick[0] == "enigmagick_api") {
-			enigmagick_api = config.data_sources.enigmagick[1];
+
+
+	console.log(typeof config.module_settings);
+	if(typeof config.module_settings == "object") {
+		console.log("module settings detected");
+		if(typeof config.module_settings.enigmagick == "object") {
+			console.log("enigmagick module settings detected");
+			enigmagick_api = config.module_settings.enigmagick.api;
 			console.log( "enigmagick_api detected." );
-		} else {
-			console.log("EnigMagick Error: API Incorrectly Defined.");
+			console.log("enigmagick_api = "+enigmagick_api);
+		}
+	}
+
+	if(enigmagick_api == "") {
+		if(typeof config.data_sources == "object") {
+			if(typeof config.data_sources.enigmagick == "object" && config.data_sources.enigmagick[0] == "enigmagick_api") {
+				// Deprecated settings configuration. Change config to use 'module_settings.enigmagick.api' instead.
+				console.log("Deprecated settings configuration. Change config to use 'module_settings.enigmagick.api' instead.");
+				enigmagick_api = config.data_sources.enigmagick[1];
+				console.log( "enigmagick_api detected (warning: using deprecated config)." );
+			} else {
+				console.log("EnigMagick Error: API Incorrectly Defined.");
+			}
 		}
 	}
 	if(enigmagick_api != "") {

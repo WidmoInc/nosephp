@@ -39,12 +39,24 @@ function chaoshex_load(args) {
 		}, 100);
 		return null;
 	}
-	if(typeof config.data_sources == "object") {
-		if(typeof config.data_sources.enigmagick == "object" && config.data_sources.enigmagick[0] == "enigmagick_api") {
-			chaoshex_enigmagick_api = config.data_sources.enigmagick[1];
+
+	if(typeof config.module_settings == "object") {
+		if(typeof config.module_settings.chaoshex == "object") {
+			chaoshex_enigmagick_api = config.module_settings.chaoshex.enigmagick_api;
 			chaoshex_enigmagick_api_enabled = true;
-			console.log( "enigmagick_api detected." );
-		} 
+			console.log( "chaoshex_enigmagick_api detected." );
+		}
+	}
+	if(!chaoshex_enigmagick_api_enabled) {
+		if(typeof config.data_sources == "object") {
+			if(typeof config.data_sources.enigmagick == "object" && config.data_sources.enigmagick[0] == "enigmagick_api") {
+				// Deprecated settings configuration. Change config to use 'module_settings.enigmagick.api' instead.
+				console.log("Deprecated settings configuration. Change config to use 'module_settings.chaoshex.enigmagick_api' instead.");
+				chaoshex_enigmagick_api = config.data_sources.enigmagick[1];
+				chaoshex_enigmagick_api_enabled = true;
+				console.log( "chaoshex_enigmagick_api detected (warning: using deprecated config)." );
+			} 
+		}
 	}
 	if(chaoshex_enigmagick_api_enabled) {
 		chaoshex_getCipherList();
