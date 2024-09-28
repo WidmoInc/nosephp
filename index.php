@@ -39,23 +39,6 @@
 				text-align: center;
 				margin-top: 2em;
 			}
-
-			.BPloading {
-				animation: hue-rotate 1s infinite;
-			}
-
-			@keyframes hue-rotate {
-			    0% { filter:hue-rotate(0deg);}
-					12% {filter:hue-rotate(45deg); }
-					25% { filter:hue-rotate(90deg);}
-					37% {filter:hue-rotate(135deg); }
-			    50% { filter:hue-rotate(180deg);}
-					62% { filter:hue-rotate(225deg);}
-					75% { filter:hue-rotate(270deg);}
-					87% { filter: hue-rotate(315deg);}
-			    100% { filter:hue-rotate(360deg);}
-				}
-
 		</style>
 	</head>
 
