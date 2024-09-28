@@ -2,7 +2,11 @@
 	$content = "PHP Generated Preview Goes Here...";
 	$title = "Title of the page goes here.";
 	
-	$json = file_get_contents("./local_config.json");#
+	if (file_exists("./local_config.json")) {
+		$json = file_get_contents("./local_config.json");#
+	} else {
+		$json = file_get_contents("./config.json");#
+	}
 	
 	$config = json_decode($json);
 
