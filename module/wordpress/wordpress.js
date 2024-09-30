@@ -57,6 +57,38 @@ console.log(args.show);
         pushStateWithoutDuplicate('WordPress Error: API Not Defined.', './?p=wordpress/');
     }
 }
+function wordpress_permlink(permlink) {
+	console.log( "wordpress_permlink start." );
+	let args, tag, postid;
+
+	console.log(permlink);
+	permlink = permlink.filter((str) => str !== '');
+	console.log(permlink);
+
+    if(permlink.length >= 1) {
+        switch(permlink[0]) {
+            case 'post':
+                postid = permlink[1];
+                args='{"show": "posts", "postid", "'+postid+'"}';
+                break;
+            case 'posts':
+                if(permlink.length >= 2) {
+                    tag=permlink[1];
+                    args='{"show": "posts", "tag", "'+tag+'"}';
+                } else {
+                    args='{"show": "posts"}';
+                }
+                break;
+        }
+    } else {
+        args='';
+    }
+
+	console.log(args);
+	console.log( "wordpress_permlink end." );
+
+	wordpress_load(args);
+}
 
 function getWordPressPosts(count,page,tag) {
     let posts_url = wordpress_api+"posts/";
@@ -174,8 +206,6 @@ function wordpress_parse_args(args) {
 
 	pushStateWithoutDuplicate(push_msg, './?p=wordpress/'+url_args);
 }
-
-// WordPress initialisation functions
 
 //Template loaded functions
 function wordpressCommentTemplateLoaded(template) {
