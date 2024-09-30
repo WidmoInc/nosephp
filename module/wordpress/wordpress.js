@@ -69,12 +69,12 @@ function wordpress_permlink(permlink) {
         switch(permlink[0]) {
             case 'post':
                 postid = permlink[1];
-                args='{"show": "posts", "postid", "'+postid+'"}';
+                args='{"show": "post", "postid": "'+postid+'"}';
                 break;
             case 'posts':
                 if(permlink.length >= 2) {
                     tag=permlink[1];
-                    args='{"show": "posts", "tag", "'+tag+'"}';
+                    args='{"show": "posts", "tag": "'+tag+'"}';
                 } else {
                     args='{"show": "posts"}';
                 }
