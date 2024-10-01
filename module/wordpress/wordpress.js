@@ -81,7 +81,7 @@ function wordpress_permlink(permlink) {
                 break;
         }
     } else {
-        args='';
+        args='{"show": "posts"}';
     }
 
 	console.log(args);
@@ -181,6 +181,7 @@ function processWordPressPost(post_obj) {
     content = template;
 
 	$('#contentArea').html(content);
+    pushStateWithoutDuplicate(post_obj.title.rendered, './?p=wordpress/post/'+post_obj.id);
 }
 
 /* WordPress Initialisation Functions */
