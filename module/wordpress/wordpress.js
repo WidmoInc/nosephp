@@ -188,17 +188,17 @@ function processWordPressPost(post_obj) {
 function wordpress_parse_args(args) {
 	console.log("wordpress_parse_args(args)");
 	console.log(args);
-	let push_msg = "wordpress";
+	let push_msg = "WordPress"; // To Do: Allow a setting override for this.
 	let url_args = ''
 	if(args.show) {
         console.log(args.show);
         if(args.show == "" || args.show == "posts") {
-            push_msg += "Posts";
+            push_msg += " Posts";
             url_args += 'posts/';
             if(args.tag) {
                 if(args.tag != "") {
                     console.log(args.tag);
-                    push_msg += " Posts with tag: '"+args.tag+"'";
+                    push_msg += " with tag: '"+args.tag+"'";
                     url_args += args.tag+'/'
                 }
             }
