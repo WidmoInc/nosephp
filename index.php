@@ -11,6 +11,7 @@
 	$config = json_decode($json);
 
 	$title = $config->sitetitle;
+	$meta_description = $config->sitetitle;
 
 	$page = $_GET['p'];
 
@@ -29,6 +30,7 @@
 		<script src="init.js"></script>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="<?=$meta_description?>">
 		<link rel="icon" type="image/png" href="content/default/widmoinc-logo-32px.png" sizes="32x32">
 		<link rel="icon" type="image/png" href="content/default/widmoinc-logo-32px.png" sizes="32x32">
 		<link rel="icon" type="image/png" href="content/default/widmoinc-logo-32px.png" sizes="32x32">
