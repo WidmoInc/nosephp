@@ -2,5 +2,6 @@
 .git/*
 *.DS_Store
 *.sw?
+local_config.json
 content/test/*
 content/test
