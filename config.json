@@ -9,7 +9,7 @@
 		"site_image": ""
 	},
 
-	"modules": ["html","markdown","text","wordpress","chaoshex","enigmagick"],
+	"modules": ["html","markdown","text","wordpress"],
 
 	"firstpage": {"type": "html", "args": ["nosephp.html"]},
 
