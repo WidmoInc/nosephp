@@ -35,16 +35,26 @@ function parseModule(module_name) {
 		var index = modules_to_load.indexOf(module_name);
 		modules_to_load.splice(index, 1);
 	});
+
+	//get module css
+	$.get("./theme/"+config.theme+"/"+module_name+".css")
+		.done(function() {
+			// load theme CSS
+			$("<link/>", {
+				rel: "stylesheet",
+				type: "text/css",
+				href: "./theme/"+config.theme+"/"+module_name+".css"
+			}).appendTo("head");
+		}).fail(function() {
+			// load theme CSS
+			$("<link/>", {
+				rel: "stylesheet",
+				type: "text/css",
+				href: "./module/"+module_name+"/"+module_name+".css"
+			}).appendTo("head");
+		});
 }
 
-// Load theme specific js files
-
-function loadThemeJs(theme_name) {
-  //console.log('Im in')
-	$.getScript("theme/"+theme_name+"/"+theme_name+".js", function( data, textStatus, jqxhr){
-		console.log( "Load was performed for "+theme_name+".");
-	});
-}
 
 
 /*** Functions for parsing themes ***/
@@ -73,10 +83,7 @@ function parseTheme(theme) {
 }
 // Load the theme template
 function getThemeHTML(theme) {
-  return $.ajax({
-    type: 'GET',
-    url: "./theme/"+theme+"/"+theme+".html"
-  });
+  return $.get("./theme/"+theme+"/"+theme+".html");
 }
 
 
@@ -107,6 +114,14 @@ function parseThemeHTML(themeHTML) {
 
   parseMenu();
 }
+
+// Load theme specific js files
+function loadThemeJs(theme_name) {
+	//console.log('Im in')
+	  $.getScript("theme/"+theme_name+"/"+theme_name+".js", function( data, textStatus, jqxhr){
+		  console.log( "Load was performed for "+theme_name+".");
+	  });
+  }
 
 // Create the Menu
 function parseMenu() {
@@ -224,15 +239,15 @@ function pushStateWithoutDuplicate(title, url) {
 // JQuery ready function that is called once document has loaded.
 $(document).ready(function() {
 	// Get local config
-	$.ajax("local_config.json").done(parseConfig).fail(function(){
+	$.get("local_config.json").done(parseConfig).fail(function(){
 		// Else load default config on failure
-		$.ajax("config.json").done(parseConfig).fail(configFail);
+		$.get("config.json").done(parseConfig).fail(configFail);
 	});
 
-  window.addEventListener("popstate", function(e) {
-    if (window.historyInitiated) {
-      popstate = true;
-      parseFirstPage();
-    }
-  });
+	window.addEventListener("popstate", function(e) {
+		if (window.historyInitiated) {
+			popstate = true;
+			parseFirstPage();
+		}
+	});
 });
