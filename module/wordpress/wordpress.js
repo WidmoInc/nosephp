@@ -120,7 +120,6 @@ function processWordPressPosts(posts) {
         template = template.replace(/{wordpress_posts_title}/g,post_obj.title.rendered);
         template = template.replace(/{wordpress_posts_id}/g,post_obj.id);
         template = template.replace(/{wordpress_posts_guid}/g,post_obj.guid);
-        //template = template.replace(/{wordpress_posts_img}/g,json_metadata.image);
         template = template.replace(/{wordpress_posts_author}/g,post_obj.author);
 
         template = template.replace(/{wordpress_posts_href}/g,"javascript:getWordPressPost('"+post_obj.id+"');");
@@ -131,6 +130,16 @@ function processWordPressPosts(posts) {
 
         // Full body
         template = template.replace('{wordpress_posts_content}',post_obj.content.rendered);
+
+        var post_content = $($.parseHTML(post_obj.content.rendered));
+        var img_src = post_content.find('img').attr('src');
+
+        template = template.replace(/{wordpress_posts_img}/g,img_src);        
+        if(typeof img_src === 'undefined') {
+            template = template.replace(/{wordpress_posts_thumb}/g,'no_thumb');
+        } else {
+            template = template.replace(/{wordpress_posts_thumb}/g,'has_thumb');
+        }
 
         // Body preview
         template = template.replace('{wordpress_posts_excerpt}',post_obj.excerpt.rendered);
