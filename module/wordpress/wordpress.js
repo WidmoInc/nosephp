@@ -1,5 +1,5 @@
 // Globals used in this module
-var wordpress_args, wordpress_post, wordpress_api, wordpress_users, wordpress_tags, wordpress_categories, wordpress_preloaded=0;
+var wordpress_args, wordpress_config, wordpress_api, wordpress_users, wordpress_tags, wordpress_categories, wordpress_preloaded=0;
 
 // wordpress post globals
 var wordpress_post_template, wordpress_post;
@@ -94,22 +94,28 @@ function getWordPressPosts(count,page,tag) {
     let posts_url = wordpress_api+"posts/";
     console.log(posts_url);
 
-	$.ajax({
-        type: 'GET',
-        url: posts_url
-    }).done(processWordPressPosts);
+	$.get(posts_url).then(posts => {
+        processWordPressPosts(posts);
+    });
 }
 
 function processWordPressPosts(posts) {
     console.log(posts);
 	var template = wordpress_posts_template;
     wordpress_posts = posts;
-	var content = '';
+	var content = '', author;
+
 
 	var postsLength = wordpress_posts.length;
 	for (var i = 0; i < postsLength; i++) {
 		post_obj = wordpress_posts[i];
 
+        if(typeof wordpress_config.authors[post_obj.author] === 'undefined') {
+            author = wordpress_config.authors["default"];
+        } else {
+            author = wordpress_config.authors[post_obj.author];
+        }
+       
         /*wordpress_posts_displayed.push(post_obj.permlink);
         display_count++;
         //template+="post_obj "+i+": "+JSON.stringify(post_obj)+"<br><br>";
@@ -120,7 +126,7 @@ function processWordPressPosts(posts) {
         template = template.replace(/{wordpress_posts_title}/g,post_obj.title.rendered);
         template = template.replace(/{wordpress_posts_id}/g,post_obj.id);
         template = template.replace(/{wordpress_posts_guid}/g,post_obj.guid);
-        template = template.replace(/{wordpress_posts_author}/g,post_obj.author);
+        template = template.replace(/{wordpress_posts_author}/g,author);
 
         template = template.replace(/{wordpress_posts_href}/g,"javascript:getWordPressPost('"+post_obj.id+"');");
 
@@ -289,7 +295,8 @@ function initWordPress() {
         console.log("module settings detected");
         if(typeof config.module_settings.wordpress == "object") {
             console.log("wordpress module settings detected");
-            wordpress_api = config.module_settings.wordpress.api;
+            wordpress_config = config.module_settings.wordpress;
+            wordpress_api = wordpress_config.api;
             console.log( "wordpress_api detected." );
             console.log("wordpress_api = "+wordpress_api);
 

@@ -45,7 +45,11 @@
 			"api": "https://public-api.wordpress.com/wp/v2/sites/nosephp.wordpress.com/",
 			"show_tags": true,
 			"show_category": false,
-			"page_size": 20
+			"page_size": 20,
+			"authors": {
+				"default": "Widmo Inc",
+				"256157171": "Toni"
+			}
 		}
 	},
 
