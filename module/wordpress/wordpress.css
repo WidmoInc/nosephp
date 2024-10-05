@@ -62,7 +62,9 @@ min-height:100%;
 	border-bottom-style: solid;
 	padding: 0.7em;
 }
-
+#contentArea .wordpress_posts h2 {
+	margin-left: 0.5em;
+}
 .wordpress_posts_preview {
 	max-width: 100%;
 	display: inline-block;
