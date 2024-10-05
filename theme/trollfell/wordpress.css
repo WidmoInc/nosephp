@@ -118,10 +118,13 @@ div.wordpress_posts_meta{
 	max-height: 30%;
 }
 
-#contentArea .wordpress_posts h2 a {
-	text-align: center;
-	display: block;
+#contentArea .wordpress_posts h2 {
+	padding-top: 0.5em;
   }
+  #contentArea .wordpress_posts h2 a {
+	  text-align: center;
+	  display: block;
+	}
 .wordpress_posts_author {
 	margin-right: 1.5em;
 }
