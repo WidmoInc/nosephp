@@ -1,65 +1,4 @@
-.no_thumb .wordpress_posts_thumbnail{
-	display: none;
-}
-
-.has_thumb .wordpress_posts_thumbnail{
-border: 1px solid;
-border-radius: 5px;
-display:inline-block;
-padding-top: 20%;
-position: relative;
-width:30%;
-overflow: hidden;
-margin-right: 0.5em;
-border-radius: 10px;
-}
-
-.has_thumb .wordpress_posts_thumbnail img{
-vertical-align: middle;
-position:absolute;
-top:0;
-bottom:0;
-left:0;
-right:0;
-max-width:100%;
-min-height:100%;
-}
-
-.no_thumb .wordpress_posts_preview{
-	width:100%;
-	padding-top: 20%;
-	position: relative;
-}
-
-.no_thumb .wordpress_posts_preview span{
-	position:absolute;
-	top:0;
-}
-
-.has_thumb .wordpress_posts_preview{
-	display: inline-block;
-	width:66%;
-	max-height:300px;
-	overflow:hidden;
-	padding-top: 20%;
-	position: relative;
-	border-radius: 5px;
-	font-size: 0.75em;
-}
-
-.has_thumb .wordpress_posts_preview span{
-	vertical-align: middle;
-	position:absolute;
-	top:0;
-	bottom:0;
-	left:0;
-	right:0;
-	max-width:100%;
-	min-height:100%;
-}
-
 	/* WordPress Content Modules */
-
 	/* WordPress Profile */
 
 	#profile-image img {
@@ -179,13 +118,79 @@ div.wordpress_posts_meta{
 	max-height: 30%;
 }
 
+#contentArea .wordpress_posts h2 a {
+	text-align: center;
+	display: block;
+  }
+.wordpress_posts_author {
+	margin-right: 1.5em;
+}
+
+div.icon img{
+	margin: 0;
+	max-width: 100%;
+}
+
+.no_thumb .wordpress_posts_thumbnail{
+	display: none;
+}
+
+.has_thumb .wordpress_posts_thumbnail{
+	border: 0px;
+	border-radius: 5px;
+	display:block;
+	position: relative;
+	overflow: hidden;
+	margin-right: auto;
+	margin-left: auto;
+	border-radius: 10px;
+}
+
+.has_thumb .wordpress_posts_thumbnail img{
+	vertical-align: middle;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	max-height: 200px;
+}
+
+.no_thumb .wordpress_posts_preview{
+	width:100%;
+	position: relative;
+}
+
+.no_thumb .wordpress_posts_preview span{
+	position:absolute;
+	top:0;
+}
+
+.has_thumb .wordpress_posts_preview{
+	max-height:300px;
+	overflow:hidden;
+	position: relative;
+	border-radius: 5px;
+	font-size: 0.75em;
+}
+
+.has_thumb .wordpress_posts_preview span{
+	vertical-align: middle;
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	max-width:100%;
+	min-height:100%;
+}
+
 /*Social Menu*/
 
-	div.icon, div.icon:hover, div.icon:focus{
-		box-shadow:none;
-	}
+div.icon, div.icon:hover, div.icon:focus{
+	box-shadow:none;
+}
 
-	div.icon span a:link{
+div.icon span a:link{
 	display: inline-block;
 	text-decoration: none;
 	font-style: oblique;
@@ -194,11 +199,6 @@ div.wordpress_posts_meta{
 	padding:0;
 	border-radius: 5px;
 	margin-bottom: 0.5em;
-}
-
- div.icon img{
-	margin: 0;
-	max-width: 100%;
 }
 
 /* Responsive Design */
