@@ -27,7 +27,6 @@ min-height:100%;
 }
 .no_thumb .wordpress_posts_preview{
 	width:100%;
-	padding-top: 20%;
 	position: relative;
 }
 
@@ -39,7 +38,6 @@ min-height:100%;
 .has_thumb .wordpress_posts_preview{
 	width:66%;
 	max-height:300px;
-	padding-top: 20%;
 	position: relative;
 }
 
