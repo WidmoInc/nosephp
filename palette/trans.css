@@ -55,21 +55,6 @@ footer a:hover, a:focus, a:active {
   color: #f5abb9;
 }
 
-section:nth-child(5n+2),section:nth-child(5n+6){
-  background:#5bcffb;
-  color: #ffffff;
-}
-
-section:nth-child(5n+3),section:nth-child(5n+5){
-  background:#f5abb9;
-  color: #ffffff;
-  }
-
-section:nth-child(5n+4){
-  background:#ffffff;
-  color: #5bcffb;
-  }
-
 article:nth-child(5n+1),article:nth-child(5n+5){
    background:#5bcffb;
   color: #ffffff;
@@ -83,6 +68,10 @@ article:nth-child(5n+2),article:nth-child(5n+4){
 article:nth-child(5n+3){
   background:#ffffff;
   color:  #5bcffb;
+  }
+
+  article:nth-child(5n+3) a:hover{
+    color:  #f5abb9;
   }
   
 hgroup {
