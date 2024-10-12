@@ -4,6 +4,7 @@ function html_menuitem(args) {
 }
 
 function html_display(content) {
+  content = '<article>'+content+'</article>';
   $('#contentArea').html(content);
 }
 function html_load(file) {
