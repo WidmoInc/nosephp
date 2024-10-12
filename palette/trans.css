@@ -1,7 +1,8 @@
 /* Palette:
-pink:   #f5abb9   
-blue:   #5bcffb  
-white:  #ffffff   
+pink:       #f5abb9   
+blue:       #5bcffb  
+dark blue:  #03a3e2
+white:      #ffffff   
 */
 
 /* GENERAL THEME STYLES */
@@ -13,54 +14,84 @@ body {
 	color: #f5abb9;
 }
 
-header {
-  background: linear-gradient(to right, rgb(85, 205, 252), rgb(247, 168, 184), rgb(255, 255, 255),rgb(247, 168, 184), rgb(85, 205, 252));
+header { background: linear-gradient(to right, rgb(85, 205, 252), rgb(247, 168, 184), rgb(255, 255, 255),rgb(247, 168, 184), rgb(85, 205, 252));}
+
+main { 
+  background-color: #f38fa1;
+  color: #ffffff;
 }
 
-h1, h2 {
-  color:#5bcffb;
-}
+h1, h2 { color:#03a3e2;}
 
-h3, h4, h5, h6 {
-  color:#ffffff;
-}
+h3, h4, h5, h6 { color:#ffffff;}
 
-p { color:#ffffff;}
+/*p { color:#ffffff;}*/
 
 
-a { color: #ffffff;}
+a { color: #03a3e2;}
 
-a:hover { color: #f5abb9;}
-
-a:focus { color: #f5abb9;}
-
-a:active { color: #ffffff;}
+a:hover, a:focus, a:active { color: #ffffff;}
 
 img { color: #ffffff;}
 
-hr { color: rgba(93, 37, 52, 0.2)}
+hr { color: rgba(93, 37, 52, 0.2);}
 
-pre {
-  color:#ffffff
+pre { color:#ffffff;}
+
+ul { color:#ffffff}
+
+ol { color:#ffffff;}
+
+li { color:#ffffff;}
+
+button {
+  color:#5bcffb;
+  background: #ffffff;
 }
 
-ul {
-  color:#ffffff;
+nav a:hover, a:focus, a:active { color:#f5abb9;}
+
+footer a:hover, a:focus, a:active {
+  color: #f5abb9;
 }
 
-ol {
-  color:#ffffff;
+section:nth-child(5n+2),section:nth-child(5n+6){
+  background:#5bcffb;
+  color: #ffffff;
 }
 
-li {
-  color:#ffffff;
+section:nth-child(5n+3),section:nth-child(5n+5){
+  background:#f5abb9;
+  color: #ffffff;
+  }
+
+section:nth-child(5n+4){
+  background:#ffffff;
+  color: #5bcffb;
+  }
+
+article:nth-child(5n+1),article:nth-child(5n+5){
+   background:#5bcffb;
+  color: #ffffff;
+}
+  
+article:nth-child(5n+2),article:nth-child(5n+4){
+  background:#f5abb9;
+  color: #ffffff;
+}
+  
+article:nth-child(5n+3){
+  background:#ffffff;
+  color:  #5bcffb;
+  }
+  
+hgroup {
+  background: linear-gradient(to right, rgb(85, 205, 252), rgb(247, 168, 184), rgb(255, 255, 255),rgb(247, 168, 184), rgb(85, 205, 252));
 }
 
-#contentArea {
-  background-color: #f5abb9;
+article hgroup{
+  background: inherit;
 }
-
-
 
 
 /* Generic Classes */
@@ -70,6 +101,8 @@ li {
 
 /* Enclosure1 Styles*/
 
+/*
+
 .enclosure1{
   color:#ffffff;
   background-color:#f5abb9;
@@ -78,6 +111,7 @@ li {
 
 /* Enclosure2 Styles */
 
+/*
 
 .enclosure2 {
   color:#f5abb9;
@@ -107,8 +141,9 @@ li {
 
 .enclosure2 ul li {
   color: #ffffff; 	/* set color of list item text */
- }
+}
 
+/*
  .enclosure2 ul li::before {
    color: #ffffff;   /* color of unicode character */
  }
@@ -116,6 +151,8 @@ li {
 
 
 /* Enclosure3 Styles */
+
+/*
 
 .enclosure3{
   color: #5bcffb;
@@ -132,6 +169,8 @@ li {
 /* Pattern Classes
 (can be applied to add gradients, textures etc to any element with a background) */
 
+/*
+
 .pattern1 { background: linear-gradient(#ffffff,#f5abb9);}
 
 .pattern2 { background: linear-gradient(#ffffff, #5bcffb);}
@@ -140,6 +179,8 @@ li {
 
 /* Button Classes
 (to be used with any elements that act like a button)*/
+
+/* 
 
 .button1{
   background: #f5abb9;
@@ -162,7 +203,9 @@ li {
 
 /*Menu1 Styles*/
 
-.menu1 span a {
+/* 
+
+  .menu1 span a {
   background: #5bcffb;
   color: #ffffff;
 }
@@ -185,6 +228,8 @@ li {
 .menu1 div{ background-color: #5bcffb;}
 
 /* Menu2 Styles */
+
+/*
 
 .menu2 a { color: #ffffff;}
 
@@ -223,6 +268,8 @@ li {
 }
 
 /* Social Menu Styles*/
+
+/* 
 
 div.socialmenu.icon  a:link { color:#ffffff;}
 
