@@ -238,10 +238,16 @@ function pushStateWithoutDuplicate(title, url) {
 
 // JQuery ready function that is called once document has loaded.
 $(document).ready(function() {
+	// Get domain config
+	let host_config = window.location.host+".json";
+	console.log("host: "+host_config);
+
 	// Get local config
-	$.get("local_config.json").done(parseConfig).fail(function(){
-		// Else load default config on failure
-		$.get("config.json").done(parseConfig).fail(configFail);
+	$.get(host_config).done(parseConfig).fail(function(){
+		$.get("local_config.json").done(parseConfig).fail(function(){
+			// Else load default config on failure
+			$.get("config.json").done(parseConfig).fail(configFail);
+		});
 	});
 
 	window.addEventListener("popstate", function(e) {
