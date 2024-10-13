@@ -195,6 +195,7 @@ function getFirstContentModuleFromMenu(menu) {
 }
 
 function parseSocialMenu() {
+	// Deprecated. This will be a content module
 	if(config.socialmenu !== null && typeof config.socialmenu === 'object') {
 		var smenu = config.socialmenu;
 		console.log(smenu);
@@ -250,7 +251,9 @@ $(document).ready(function() {
 
 	// Get local config
 	$.get(host_config).done(parseConfig).fail(function(){
+		hostname = ''; // We won't use folders as this isn't a multisite setup
 		$.get("local_config.json").done(parseConfig).fail(function(){
+			hostname = 'default'; // Use the default site folder, regardless of hostname, because no custom config detected
 			// Else load default config on failure
 			$.get("config.json").done(parseConfig).fail(configFail);
 		});
