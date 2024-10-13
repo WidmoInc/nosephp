@@ -1,11 +1,16 @@
-var config, modules_to_load, popstate = false;
+var config, hostname, modules_to_load, popstate = false;
 
 /*** Functions for handling config.json ***/
 // Parse config.json once loaded...
 function parseConfig(config_json) {
   if(typeof config_json ==='string') config_json = JSON.parse(config_json);
   config = config_json;
-  parseModules(config_json.modules);
+  if(typeof config.alias === 'string') {
+	hostname = config.alias;
+	$.get(config.alias+".json").done(parseConfig).fail(configFail);
+  } else {
+	parseModules(config_json.modules);
+  }
 }
 // Failed to load config.json
 function configFail() {
@@ -239,7 +244,8 @@ function pushStateWithoutDuplicate(title, url) {
 // JQuery ready function that is called once document has loaded.
 $(document).ready(function() {
 	// Get domain config
-	let host_config = window.location.host+".json";
+	hostname = window.location.host;
+	let host_config = hostname+".json";
 	console.log("host: "+host_config);
 
 	// Get local config
