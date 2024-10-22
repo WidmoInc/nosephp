@@ -1,7 +1,4 @@
-/*Generic Classes*/
-
-/*Standard HTML Elements*/
-body{
+body {
 	width: 100%;
 	margin:0;
 	text-align: justify;
@@ -9,143 +6,57 @@ body{
 	font-size: 1em;
 }
 
-h1{
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-		font-size: 160%;
-		width: 90%;
+header { padding:0.5em; }
+
+h1 {
+	font-size: 160%;
+	width: 90%;
     margin-bottom: 0.2em;
-		margin-left: auto;
-		margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
     text-align: left;
 }
 
-h2{
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-		font-size:  140%;
+h2 {
+	font-size:  140%;
     font-style: oblique;
     margin-bottom: 0.2em;
-		margin-top: 0;
-		margin-left: auto;
-		margin-right: auto;
+	margin-top: 0;
+	margin-left: auto;
+	margin-right: auto;
     text-align: left;
-		width: 90%;
-		padding-bottom: 0.5em;
+	width: 90%;
+	padding-bottom: 0.5em;
 }
 
-h3{
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-		font-size:120% ;
+h3 {
+	font-size:120% ;
     font-style: normal;
     margin-bottom: 0.2em;
-		margin-left: auto;
-		margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
     text-align: left;
-		width: 90%;
-		padding-bottom: 0.2em;
+	width: 90%;
+	padding-bottom: 0.2em;
 }
 
-p{
-	width: 100%;
-	margin-right:auto;
-	margin-left:auto;
+p {
+	padding-left: 1em;
+	padding-right: 1em;
 }
 
-img{
+img {
 	max-width: 70%;
 	margin-right:auto;
 	margin-left:auto;
 	border-radius: 2px;
 }
 
-a:link {
-  text-decoration: none;
-}
+a:link { text-decoration: none;}
 
 hr { border-width: 1px; }
 
-/* Header styles */
-
-header{
-  padding-top:0.5em;
-}
-/* Button styles */
-
-/* Menu Styles*/
-
-#menuArea{
-	height: 2.5em;
-}
-
-#menuArea div{
-  list-style: none;
-  text-align: left;
-	width:90%;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 0.2em;
-	padding-left: 0;
-	padding-top: 1em;
-	background: none !important;
-}
-
-#menuArea span{
-		height: 2.5em;
-}
-
-
-#menuArea div span a{
-	font-size: 1em;
-	font-weight: bold;
-  text-decoration: none;
-	border-style: none;
-	padding-right: 3em;
-	padding-left: 0;
-	-moz-transition: font-size 1s;
-	transition: font-size 1s;
-}
-#menuArea div span a:hover{
-	font-size: 1.3em;
-	-moz-transition: font-size 1s;
-	transition: font-size 1s;
-	background: none;
-}
-
-#menuArea div span a:focus{
-	outline:0;
-	font-size: 1.3em;
-	-moz-transition: font-size 1s;
-	transition: font-size 1s;
-	background: none;
-}
-
-#menuArea div span a:active{
-	font-size: 2em;
-	padding-right: 3em;
-	padding-left: 3em;
-	-moz-transition: font-size 1s;
-	transition: font-size 1s;
-	background: none;
-}
-#menuArea div span {
-  display: inline-block;
-	padding-bottom: 0;
-	padding-top: 0;
-  font-size: 1em;
-}
-
-/* Sidebar styles*/
-
-/* Content Area Styles */
-#content{
-	margin-right:15%;
-	margin-left:15%;
-}
-
-#content a{
-	box-shadow: none;
-}
-
-#contentArea{
+main {
 	border-style:none;
 	padding:1em;
 	display:block;
@@ -154,88 +65,36 @@ header{
 	margin-right: auto;
 }
 
-#contentArea h1{
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    margin-bottom: 0.5em;
-    text-align: left;
-}
-
-#contentArea h2{
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    margin-bottom: 0.5em;
-    text-align: left;
-}
-#contentArea h3{
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    margin-bottom: 0.5em;
-    text-align: left;
-}
- #contentArea ul{
-	  display: block;
-    list-style-type:disc;
-}
- #contentArea li{
-  	font-size: 1em;
-	  color:black;
-		padding: 0.5em;
-	}
-	#contentArea p{
-		font-size: 1em;
-		text-align: left;
-	}
-
-	#contentArea ul li p {
-    padding: 0;
-    margin: 0;
-}
-	#contentArea a {
-	  text-decoration: none;
-	}
-
-	/*Footer styles*/
-
-div.icon img{
-	box-shadow: none !important;
-}
-
-.link_url{
-	margin-bottom: 2em;
-}
-
-#footer-menu li{
-	display: inline-block;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 2em;
-	padding-right: 2em;
-	font-size: 1em;
-}
-#footer-menu li a:link{
-	text-decoration: none;
-	font-style: oblique;
-}
-
-#footer-menu ul{
-  list-style: none;
-  text-align: center;
-}
-
-.socialmenu{
+nav div {
 	width:90%;
 	margin-left: auto;
 	margin-right: auto;
+	padding-top: 1em;
 }
 
-.socialmenu img{
-	max-width:100%;
+nav span { height: 2.5em; }
+
+nav div span { display: inline-block; }
+
+nav div span a {
+	font-weight: bold;
+	padding-right: 3em;
 }
-.socialmenu a{
-	display: inline-block;
-	margin: 1em;
+
+nav div span a:hover {
+	font-size: 1.3em;
+	-moz-transition: font-size 0.5s;
+	transition: font-size 0.5s;
 }
-.socialmenu a:hover{
-	background: none !important;
+
+nav div span a:focus {
+	font-size: 1.3em;
 }
+
+nav div span a:active {
+	font-size: 2em;
+}
+
 @media only screen and (max-width: 800px) {
 
 	#contentArea{
@@ -243,69 +102,27 @@ div.icon img{
 		padding:0;
 	}
 
-	#contentArea p{
+	#contentArea p { 
 		width:90%;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
-	#content{
+	#content {
 		width:100%;
 		margin:0;
 	}
 
-	#menuArea{
+	nav {
 		height: inherit;
 	}
-	#menuArea div{
-	}
-
-	#menuArea div span{
+	
+	nav div span {
 		display:block !important;
 		margin-top: 0.5em;
 		height:inherit;
 	}
 
-	#menuArea div span a{
-		font-size: 1.5em;
-	}
-
-	#menuArea div span a:hover{
-		font-size: 2em;
-	}
-
-	#menuArea div span a:active{
-		padding-left: 0;
-	}
-
-	.menu .socialmenu span{
-		display: inline-block;
-	}
-
-	.has_thumb .steem_posts_preview{
-		display:none;
-		padding: 1em;
-	}
-
-	.has_thumb .steem_posts_thumbnail{
-		width:100%;
-		padding-top:66%;
-		margin-left: auto;
-		margin-right: auto;
-		display:block;
-		border:none;
-		box-shadow: none;
-	}
-
-	#profile-about{
-		max-width: 90%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	#profile-info{
-		max-width: 90%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-}
+	nav div span a { font-size: 1.5em; }
+	nav div span a:hover { font-size: 2em; }
+	nav div span a:active { padding-left: 0; }
