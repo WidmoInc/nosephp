@@ -30,8 +30,15 @@ function markdown_load(args) {
   md_file = md_file.replace(/\[/g,'');
   md_file = md_file.replace(/\]/g,'');
   
+  //sanitise file to prevent it reaching parent directory
+  md_file = md_file.replace("..",'');
 
+  //do pushState before we add the folder name
   pushStateWithoutDuplicate(md_file, './?p=markdown/'+md_file);
+
+  //if hostname is set, check the correct folder for content
+  if(hostname != '') md_file = hostname+'/'+md_file;
+
   $.ajax({
       type: 'GET',
       url: "content/"+md_file

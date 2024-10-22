@@ -11,7 +11,16 @@ function text_load(file) {
   file = file.replace(/"/g,'');
   file = file.replace(/\[/g,'');
   file = file.replace(/\]/g,'');
+
+  //sanitise file to prevent it reaching parent directory
+  file = file.replace("..",'');
+
+  //do pushState before we add the folder name
   pushStateWithoutDuplicate(file, './?p=text/'+file);
+
+  //if hostname is set, check the correct folder for content
+  if(hostname != '') file = hostname+'/'+file;
+
   $.ajax({
       type: 'GET',
       url: "content/"+file
