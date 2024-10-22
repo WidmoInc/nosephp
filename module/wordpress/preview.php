@@ -1,4 +1,7 @@
 <?php 
+    function _isCurl(){
+        return function_exists('curl_version');
+    }
     function get_web_page($url) {
         $options = array(
             CURLOPT_RETURNTRANSFER => true,   // return web page
@@ -40,27 +43,31 @@
             break;
     }
     
-    $response = get_web_page($api);
-    $resArr = array();
-    $resArr = json_decode($response);
+    if (_isCurl()){
+        $response = get_web_page($api);
+        $resArr = array();
+        $resArr = json_decode($response);
 
-    $content = "<style>.has-large-font-size { font-size: 1.4em; font-weight: bold; }</style>";
-    switch($wp_show) {
-        case 'post':
-            // get postid from args
-            $content .= "<h1>".$resArr->title->rendered."</h1>";
-            $content .= $resArr->content->rendered;
-            break;
-        case 'posts':
-        default:
-            if(count($resArr) > 0) {
-                foreach($resArr as $post) {
-                    $content .= "<h1>".$post->title->rendered."</h1>";
-                    $content .= $post->excerpt->rendered;
+        $content = "<style>.has-large-font-size { font-size: 1.4em; font-weight: bold; }</style>";
+        switch($wp_show) {
+            case 'post':
+                // get postid from args
+                $content .= "<h1>".$resArr->title->rendered."</h1>";
+                $content .= $resArr->content->rendered;
+                break;
+            case 'posts':
+            default:
+                if(count($resArr) > 0) {
+                    foreach($resArr as $post) {
+                        $content .= "<h1>".$post->title->rendered."</h1>";
+                        $content .= $post->excerpt->rendered;
+                    }
+                } else {
+                    $content = "No posts found.";
                 }
-            } else {
-                $content = "No posts found.";
-            }
-            break;
+                break;
+        }
+    } else {
+        $content = "CURL not found.";
     }
 
