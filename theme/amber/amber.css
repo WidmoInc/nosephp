@@ -57,19 +57,19 @@ main {
 }
 
 nav div {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
 	width:90%;
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 1em;
+	padding-bottom: 1em;
 }
 
-nav span { height: 2.5em; }
-
-nav div span { display: inline-block; }
 
 nav div span a {
 	font-weight: bold;
-	padding-right: 3em;
 }
 
 nav div span a:hover {
@@ -117,3 +117,4 @@ nav div span a:active {
 	nav div span a { font-size: 1.5em; }
 	nav div span a:hover { font-size: 2em; }
 	nav div span a:active { padding-left: 0; }
+}
