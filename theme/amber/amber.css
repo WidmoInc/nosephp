@@ -88,33 +88,10 @@ nav div span a:active {
 
 @media only screen and (max-width: 800px) {
 
-	#contentArea{
-		width:100%;
-		padding:0;
-	}
-
-	#contentArea p { 
-		width:90%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	#content {
-		width:100%;
-		margin:0;
-	}
-
-	nav {
-		height: inherit;
+	main {
+		width: 100%;
+		padding-left: 0%;
 	}
 	
-	nav div span {
-		display:block !important;
-		margin-top: 0.5em;
-		height:inherit;
-	}
-
-	nav div span a { font-size: 1.5em; }
-	nav div span a:hover { font-size: 2em; }
-	nav div span a:active { padding-left: 0; }
 }
+
